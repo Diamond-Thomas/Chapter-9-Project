@@ -31,11 +31,40 @@ form.addEventListener("submit", function(event) {
   const reviewerRating = document.getElementById("rating").value;
   const reviewerComments = document.getElementById("comments").value;
 
+  
+  let errors = [];
+  
+  if(!reviewerName || reviewerName.trim() == ""){
+    errors.push("Please provide your name.");
+  } 
+
+
+  if(reviewerRating < 5){
+    errors.push("Our company standard requires a 5-star rating.");
+  }
+
+  if (!reviewerComments.toLowerCase().includes("wonderful")) {
+    errors.push("Please include 'wonderful' in your message.");
+  }
+  
+  if (errors.length > 0) {
+    const errorBox = document.getElementById("error-box");
+    errorBox.innerHTML = errors.join("<br>");
+    return;
+  }
+  
+  
   console.log("Reviewer Name: ", reviewerName);
   console.log("Reviewer Rating: ", reviewerRating);
   console.log("Reviewer Comments: ", reviewerComments);
 });
 </script>
+
+<style>
+  #error-box {
+    color: red;
+  }
+</style>
 
 </body>
 </html>
