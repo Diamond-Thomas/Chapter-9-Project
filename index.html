@@ -25,6 +25,13 @@
 <script>
 const form = document.getElementById("feedback-form");
 
+const savedName = localStorage.getItem("reviewerName");
+
+if (savedName) {
+    console.log("Thank you, ", savedName ," Your glowing review has been recorded.");
+}
+
+
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   const reviewerName = document.getElementById("reviewer-name").value;
@@ -57,7 +64,10 @@ form.addEventListener("submit", function(event) {
   console.log("Reviewer Name: ", reviewerName);
   console.log("Reviewer Rating: ", reviewerRating);
   console.log("Reviewer Comments: ", reviewerComments);
+  localStorage.setItem("reviewerName", reviewerName);
 });
+
+
 </script>
 
 <style>

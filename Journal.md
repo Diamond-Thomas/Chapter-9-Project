@@ -5,3 +5,6 @@ In this phase I created a simple event handler that prints what I type in to the
 ### What validation approach did you take to collect and display errors? Did you display errors all at once or one at a time, and what are the user experience pros and cons of your chosen approach?
 
 I used multiple if statements to check for invalid input tgeb stored them in an array. I then printed the array and stopped my console log with the messages being printed out instead. one pro is that because it displays all at once it is nore efficient but with my current method as it is the errors don't erase after their done so you won't be able to tell what part is fixed just through the messages.
+
+### PROBLEMS WITH PHASE THREE
+for some reason the it's saving to the appication but it's not console logging out anything? 
