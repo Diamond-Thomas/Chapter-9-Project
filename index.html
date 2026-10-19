@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+</head>
+<body>
+
+
+<form id="feedback-form">
+<input type="text" id="reviewer-name" name="reviewer-name" placeholder="reviewer name">
+<select id="rating" name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+<textarea id="comments" name="comments" placeholder="comments"></textarea>
+<button type="submit">Submit Feedback</button>
+<div id="error-box"></div>
+</form>
+
+
+
+<script>
+const form = document.getElementById("feedback-form");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const reviewerName = document.getElementById("reviewer-name").value;
+  const reviewerRating = document.getElementById("rating").value;
+  const reviewerComments = document.getElementById("comments").value;
+
+  console.log("Reviewer Name: ", reviewerName);
+  console.log("Reviewer Rating: ", reviewerRating);
+  console.log("Reviewer Comments: ", reviewerComments);
+});
+</script>
+
+</body>
+</html>
